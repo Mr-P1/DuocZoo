@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-title>Apadrinar animal</ion-title>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="cartita" *ngIf="animalAcitvo">
+    <img alt="Silhouette of mountains" [src]="animalAcitvo.imagen" />
+    <ion-card-header>
+      <ion-card-title style="text-align: center; color: rgb(0, 119, 255);">
+        ELEGISTE A: <h2 style="text-align: center;color: rgb(255, 157, 0);">{{animalAcitvo.nombre}}</h2>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: center; color: white;">
+      ¡Genial! Ya seleccionaste al animal que quieres apadrinar.
+      Estás a pocos segundos de contribuir directamente al bienestar de uno de los animales más emblemáticos de Duoc
+      Zoo.
+      Ingresa un monto minimo de 10.000 pesos, finaliza el proceso y transfórmate oficialmente en su padrino o madrina.
+
+    </ion-card-content>
+
+    <h1 style="text-align: center;"><ion-input type="number" placeholder="000" min="0" [(ngModel)]="monto" ></ion-input></h1>
+
+    <ion-button fill="solid" expand="full" type="submit" (click)="pagar()" [disabled]="!botonHabilitado">
+      <ng-container *ngIf="botonHabilitado; else botonDeshabilitado">Apadrinar</ng-container>
+      <ng-template #botonDeshabilitado>Ya apadrinado</ng-template>
+    </ion-button>
+
+  
+    <!-- <ion-button fill="solid" expand="full" type="submit" (click)="prueba()">tesr</ion-button> -->
+
+    
+  </ion-card>
+
+
+
+
+
+
+
+</ion-content>

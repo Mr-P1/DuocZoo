@@ -1,0 +1,119 @@
+<ion-menu contentId="main-content">
+  
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <div class="contaier-login">
+        <ion-button class="men" color="success" [routerLink]="['/perfilusuario']" expand="full">
+          Perfil
+          
+        </ion-button>
+
+        <ion-button class="men" color="warning" [routerLink]="['/listar-hora',idUsuario]"  expand="full">
+          Horas Agendadas
+         
+        </ion-button>
+        <!-- <ion-button [routerLink]="['/CompraTickets']" expand="full">
+
+        </ion-button> -->
+
+        <ion-button class="men" color="danger" (click)="cerrarSesion()"  expand="full">Cerrar sesion</ion-button>
+      </div>
+
+
+
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar class="cabecera">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="textoo">
+        <h3>DuocZoo</h3>
+      </ion-title>
+    </ion-toolbar>
+    <ion-fab class="busca" horizontal="start" vertical="end">
+      <ion-searchbar placeholder="Buscar.." [debounce]="100" (ionChange)=" handleChange($event)"></ion-searchbar>
+
+
+    </ion-fab>
+  </ion-header>
+
+
+
+  <ion-content>
+    <br> <br> <br>
+
+    <ion-card class="cartita" *ngFor=" let animal of results">
+      <img alt="Silhouette of mountains" [src]="animal.imagen" />
+      <ion-card-header>
+        <ion-card-title style="text-align: center;color: rgb(255, 157, 0);">{{animal.nombre}}</ion-card-title>
+        <ion-card-subtitle style="text-align: center;color: rgb(83, 141, 255);">{{animal.raza}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content style="text-align: center;color: white;">
+        Este increible animal pesa {{animal.peso}} kg y mide unos {{animal.altura}} metros,
+        pertenece al grupo {{animal.grupo}}, este animal es {{animal.alimentacion}} y esté se encuentra en el recinto de
+        {{animal.recinto}}
+      </ion-card-content>
+
+      <ion-row>
+        <!-- <ion-col width-50 style="text-align: center">
+          <ion-button color="danger" [routerLink]="['/apadrinar',animal.id]">Apadrinar<ion-icon name="heart-outline"
+              style="color: rgb(255, 255, 255);"> </ion-icon></ion-button>
+            
+        </ion-col> -->
+
+        <ion-col width-50 style="text-align: center">
+          <ion-button color="danger" [routerLink]="['/ApadrinamintoPaypal',animal.id]">Apadrinar<ion-icon name="heart-outline"
+              style="color: rgb(255, 255, 255);"> </ion-icon></ion-button>
+            
+        </ion-col>
+      </ion-row>
+
+
+    </ion-card>
+
+
+    <!-- <ion-fab class="botonredondo" slot="fixed" [routerLink]="['/pago']">
+
+      <ion-fab-button size="small" color="warning">
+        <ion-icon name="ticket-outline"></ion-icon>
+
+
+      </ion-fab-button>
+
+    </ion-fab> -->
+
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+
+      
+      <!-- <ion-fab-button [routerLink]="['/pago']" color="warning">
+        <ion-icon name="ticket-outline"></ion-icon>
+      </ion-fab-button> -->
+
+      <ion-fab-button [routerLink]="['/CompraTickets']" color="warning">
+        <ion-icon name="ticket-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+    
+
+
+  </ion-content>
+
+  <script>
+    const refresher = document.getElementById('refresher');
+
+    refresher.addEventListener('ionRefresh', () => {
+      setTimeout(() => {
+        // Any calls to load data go here
+        cargarMasDatos();
+        refresher.complete();
+      }, 2000);
+    });
+  </script>

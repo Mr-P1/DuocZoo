@@ -1,0 +1,28 @@
+<ion-header>
+   <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card class="cartita" *ngFor="let animal of animales">
+    <img alt="Silhouette of mountains" src={{animal.imagen}} />
+    <ion-card-header>
+      <ion-card-title>{{animal.nombre}}</ion-card-title>
+      <ion-card-subtitle>{{animal.observacion}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{animal.nombre}} fue enviado a tratamiento el {{animal.fecha}} debido a que se encontro con {{animal.observacion}}
+    </ion-card-content>
+
+    <!-- <ion-button fill="solid" expand="full" [routerLink]="['/fichaanimal',animal.id]"> Tratamiento </ion-button> -->
+    <ion-button fill="solid" expand="full" [routerLink]="['/Fichapaypal',animal.id]"> Tratamiento</ion-button>
+
+  </ion-card>
+
+</ion-content>

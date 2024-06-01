@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Animal</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content> 
+  <div class="contaier-login">
+    <form [formGroup]="formularioAnimal" novalidate (ngSubmit)="agregarAnimal()">
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <ion-input  (change)="cargarFoto($event)" type="file" formControlName="imagen"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Raza</ion-label>
+        <ion-input type="text" formControlName="raza"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" formControlName="edad"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Altura</ion-label>
+        <ion-input type="number" formControlName="altura"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Peso</ion-label>
+        <ion-input type="number" formControlName="peso"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-select placeholder="Alimentacion" formControlName="alimentacion">
+          <ion-select-option value="Omnivoro">Omnivoro</ion-select-option>
+          <ion-select-option value="Carnivoro">Carnivoro</ion-select-option>
+          <ion-select-option value="Herbivoro">Herbivoro</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-select placeholder="Grupo" formControlName="grupo">
+          <ion-select-option value="Mamifero">Mamifero</ion-select-option>
+          <ion-select-option value="Aves">Aves</ion-select-option>
+          <ion-select-option value="Reptiles">Reptiles</ion-select-option>
+          <ion-select-option value="Anfibios">Anfibios</ion-select-option>
+          <ion-select-option value="Peces">Peces</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-select placeholder="Recinto" formControlName="recinto">
+          <ion-select-option value="Terrarios">Terrarios</ion-select-option>
+          <ion-select-option value="Granjas">Granjas</ion-select-option>
+          <ion-select-option value="Aviarios">Aviarios</ion-select-option>
+          <ion-select-option value="Acuarios">Acuarios</ion-select-option>
+          <ion-select-option value="Otros">Otros</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+  
+      <div style="text-align: center;">
+        <ion-button [disabled]="formularioAnimal.invalid || imagenCargando" role="submit" type="submit">
+          Guardar
+        </ion-button>
+
+      </div>
+      
+  
+  
+  
+  
+    </form>
+  </div>
+
+  
+
+</ion-content>

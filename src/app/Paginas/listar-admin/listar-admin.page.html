@@ -1,0 +1,99 @@
+<ion-menu contentId="main-content"  >
+  <ion-header  >
+    <ion-toolbar>
+
+     <!-- <ion-menu-toggle class="botonmenu " >
+
+        <ion-button color="light"  >Volver<ion-icon slot="end" name="arrow-redo-outline"></ion-icon></ion-button>
+
+      </ion-menu-toggle> -->
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <div class="contaier-login">
+        
+        <ion-button color="success" [routerLink]="['/lista-animales-tratados']" expand="full">Animales tratados</ion-button>
+        <ion-button color="danger" [routerLink]="['/']" expand="full" class="boton"> Cerrar sesion</ion-button>
+      </div>
+
+
+
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header >
+    <ion-toolbar class="cabecera" >
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="textoo" ><h3>DuocZoo</h3></ion-title>
+    </ion-toolbar>
+    <ion-fab   class="busca"  horizontal="start" vertical="end"  >
+      <ion-searchbar 
+       placeholder="Buscar.."
+       [debounce]="100"
+       (ionChange)=" handleChange($event)" class="busc"></ion-searchbar>
+
+
+    </ion-fab>
+  </ion-header>
+
+
+
+  <ion-content>
+    <ion-refresher id="refresher" slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br> <br> <br>
+
+    <ion-card class="cartita" *ngFor=" let animal of results">
+      <img alt="Silhouette of mountains" [src]="animal.imagen"  />
+      <ion-card-header>
+        <ion-card-title style="text-align: center;color: rgb(255, 157, 0);">{{animal.nombre}}</ion-card-title>
+        <ion-card-subtitle style="text-align: center;color: rgb(83, 141, 255);">{{animal.raza}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content style="text-align: center;color: white;">
+        Este increible animal pesa {{animal.peso}} kg y mide unos {{animal.altura}} metros,
+        pertenece al grupo {{animal.grupo}}, este animal es {{animal.alimentacion}} y esté se encuetra en el recinto de {{animal.recinto}}
+      </ion-card-content>
+
+      
+
+      <hr style="background-color: rgba(240, 248, 255, 0.168);">
+
+      <ion-row>
+              <ion-col width-50 style="text-align: center">
+                <ion-button    [routerLink]="['/tratamiento-animal',animal.id]" ><ion-icon name="clipboard-outline"></ion-icon></ion-button>
+                <ion-button ion-button icon-right color="primary" [routerLink]="['/modificar-admin',animal.id]"><ion-icon name="pencil-outline"></ion-icon> </ion-button>
+                <ion-button  color="danger"  round outline  [routerLink]="['/eliminar-admin',animal.id]"><ion-icon name="trash-outline"></ion-icon></ion-button>
+              </ion-col>
+      </ion-row>
+       
+      
+    </ion-card>
+
+
+    <!-- <ion-fab class="botonredondo" slot="fixed"  >
+      <ion-fab-button size="small"  [routerLink]="['/agregar-animal']" >
+        <ion-icon name="add-circle-outline" style="color: rgb(255, 255, 255);" ></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab> -->
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+
+      <ion-fab-button  [routerLink]="['/agregar-animal']" >
+        <ion-icon  name="add-circle-outline" style="color: rgb(255, 255, 255);" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+  </ion-content>
+
+
+</div>
+

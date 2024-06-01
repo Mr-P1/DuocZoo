@@ -1,0 +1,32 @@
+ion-content{
+    --background: url(./../../../assets/img/jirafa.png) 0 0/100% 100% no-repeat;
+}
+
+
+
+.contaier-login {
+    width: 90%;
+    
+    
+    border-radius: 10%;
+    
+    
+}
+
+ion-icon {
+    margin-right: 15px;
+}
+
+ion-button {
+    
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+ion-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    top: 0px !important;
+}
+

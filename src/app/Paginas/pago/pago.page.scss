@@ -1,0 +1,32 @@
+ion-content{
+    --background: url(./../../../assets/img/uuuh.jpg) 0 0/100% 100% no-repeat;
+}
+
+
+
+
+.contaier-login {
+    
+    
+    background: #ffd5008b;
+    
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+.carti {
+    border-radius: 15px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(0, 0, 0, 0.283);
+    
+}
+
+.cartita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgba(0, 0, 0, 0.737);
+     
+}

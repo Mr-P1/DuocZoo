@@ -1,0 +1,7 @@
+{
+  "name": "DuocZoo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

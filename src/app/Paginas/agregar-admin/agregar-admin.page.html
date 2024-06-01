@@ -1,0 +1,121 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-menu-toggle >
+        
+      <ion-button color="light"  [routerLink]="['/listar-admin']"><ion-icon name="arrow-undo-outline"></ion-icon>Volver</ion-button>
+      
+    </ion-menu-toggle>
+  </ion-toolbar>  
+</ion-header> -->
+
+<ion-content>
+
+  <ion-slide>
+    <div class="contaier-login">
+      <ion-grid>
+
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <h1 style="color: rgb(255, 255, 255);">Agregar Animal</h1>
+              </ion-col>
+            </ion-row>
+            <ion-list>
+              <form [formGroup]="formulario" novalidate (ngsubmit)="guardarAnimal()">
+
+                <ion-item>
+                  <ion-icon name="image-outline"></ion-icon>
+                  <ion-input  type="file" required (change)="cargarFoto($event)"
+                    formControlName="imagen"> </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-input name="fecha" type="text" required placeholder="Nombre" formControlName="nombre"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-input name="user" type="text" required placeholder="Raza" formControlName="raza"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-input name="user" type="number" min="0" max="200" required placeholder="Edad"
+                    formControlName="edad"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-input name="user" type="number" required min="0" max="200" placeholder="Altura"
+                    formControlName="altura"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-input name="user" type="number" required min="0" max="2000" placeholder="Peso"
+                    formControlName="peso"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-select interface="popover" placeholder="Alimentación:" formControlName="alimentacion">
+                    <ion-select-option value="Herbivoro">Herbivoro</ion-select-option>
+                    <ion-select-option value="Carnivoro">Carnivoro</ion-select-option>
+                    <ion-select-option value="Omnivoro">Omnivoro</ion-select-option>
+
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-select interface="popover" placeholder="Grupo:" formControlName="grupo">
+                    <ion-select-option value="Mamifero">Mamifero</ion-select-option>
+                    <ion-select-option value="Aves">Aves</ion-select-option>
+                    <ion-select-option value="Reptiles">Reptiles</ion-select-option>
+                    <ion-select-option value="Anfibios">Anfibios</ion-select-option>
+                    <ion-select-option value="Peces">Peces</ion-select-option>
+
+                  </ion-select>
+                </ion-item>
+
+
+                <ion-item>
+                  <ion-icon name="keypad-outline"></ion-icon>
+                  <ion-select interface="popover" placeholder="Recintos:" formControlName="recinto">
+                    <ion-select-option value="Terrarios">Terrarios</ion-select-option>
+                    <ion-select-option value="Granjas">Granjas</ion-select-option>
+                    <ion-select-option value="Aviarios">Aviarios</ion-select-option>
+                    <ion-select-option value="Acuarios">Acuarios</ion-select-option>
+                    <ion-select-option value="Otros">Otros</ion-select-option>
+
+                  </ion-select>
+                </ion-item>
+
+                
+                <ion-row>
+                  <ion-col>
+                    
+                    <ion-button [disabled]="formulario.invalid || imagenCargando" role="submit" type="submit">
+                      Guardar
+                    </ion-button>
+
+                    <ion-button fill="solid" expand="full" [routerLink]="['/listar-admin']"> Volver</ion-button>
+                  </ion-col>
+                </ion-row>
+
+
+              </form>
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+  </ion-slide>
+
+</ion-content>

@@ -1,0 +1,95 @@
+<ion-content>
+
+    <ion-grid class="grid1">
+
+        <ion-row class="row1">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="row2">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1 style="color: rgb(255, 255, 255);">Iniciar Sesión</h1>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <form [formGroup]="formularioLogin" (ngSubmit)="logearse()">
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-icon name="person" class="icon-login"></ion-icon>
+                                    <ion-input name="user" type="text" required placeholder="Usuario"
+                                        formControlName="usuario" minlength="4" maxlength="8"></ion-input>
+                                </ion-item>
+                                <br />
+                                <ion-item>
+                                    <ion-icon name="key-outline"></ion-icon>
+
+                                    <ion-input name="password" type="password" required placeholder="Contraseña"
+                                        formControlName="contraseña" minlength="5" maxlength="10"></ion-input>
+                                </ion-item>
+
+                            </ion-list>
+
+                            <div class="botones">
+                                <ion-button type="submit" fill="solid" expand="full">
+                                    Iniciar sesion
+                                </ion-button>
+
+                                <ion-button fill="solid" expand="full" [routerLink]="['/registrarse']">
+                                    Registrarse
+                                </ion-button>
+
+                                <a [routerLink]="['password']" expand="full">¿Olvidaste tu contraseña?</a>
+
+                                <!-- <ion-button fill="solid" expand="full" [routerLink]="['/my-component']">
+                                    Registrarse
+                                </ion-button> -->
+
+                                
+
+                            </div>
+                            <!-- <ion-row>
+                            <ion-col>
+                                <ion-button type="submit" fill="solid" expand="full" >
+                                    Iniciar sesion
+                                </ion-button>
+                            </ion-col>
+
+                            <ion-col>
+                                <ion-button fill="solid" expand="full" [routerLink]="['/registrarse']">
+                                    Registrarse
+                                </ion-button>
+                            </ion-col>
+                            
+                            <ion-col >
+
+                                <a [routerLink]="['password']"  expand="full">¿Has olvidado tu Contraseña?</a>
+                            </ion-col>
+                            
+                        </ion-row> -->
+
+                        </form>
+
+                    </ion-col>
+                </ion-row>
+
+
+            </ion-grid>
+        </div>
+    </ion-slide>
+   
+</ion-content>

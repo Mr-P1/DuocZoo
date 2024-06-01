@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ficha Animal</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+  <ion-card class="cartita" *ngFor="let datos of ficha">
+    <!-- <img alt="Silhouette of mountains" src={{animal.imagen}} /> -->
+    <ion-card-header>
+      <ion-card-title style="color: white; text-align: center;">Tratamiento</ion-card-title>
+      <ion-card-subtitle style="color: white; text-align: center;">{{datos.descripcion}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content style="color: white; text-align: center;">
+      A este animal se le hizo {{datos.descripcion}}, la fecha del {{datos.fecha}} y tendra un costo de ${{datos.precio}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ngx-paypal [config]="payPalConfig">
+    </ngx-paypal>
+  </ion-card>
+
+</ion-content>

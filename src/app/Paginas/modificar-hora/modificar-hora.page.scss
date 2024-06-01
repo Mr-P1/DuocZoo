@@ -1,0 +1,15 @@
+ion-content{
+    --background: url(./../../../assets/img/uuuh.jpg) 0 0/100% 100% no-repeat;
+}
+
+.carti {
+    border-radius: 15px;
+    backdrop-filter: blur(40px);
+    background-color: rgba(0, 0, 0, 0.283);
+    
+}
+
+ion-button {
+    display: block;
+    margin: auto;
+  }

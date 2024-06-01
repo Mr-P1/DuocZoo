@@ -1,0 +1,59 @@
+<!-- <ion-content class="contaier-login">
+  <form [formGroup]="formControl">
+
+
+    <ion-card>
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="contraseña"></ion-input>
+        </ion-item>
+
+      </ion-card-content>
+
+      <ion-button color="warning" (click)="cambiar()" expand="full">Cambiar contraseña</ion-button>
+
+    </ion-card>
+
+
+  </form>
+</ion-content> -->
+
+<ion-content>
+  <ion-slide>
+    <div class="contaier-login">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1 style="color: rgb(255, 255, 255);">Ingrese su nueva contraseña</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <form [formGroup]="formControl">
+              <ion-list>
+                <ion-item>
+                  <ion-icon name="key-outline"></ion-icon>
+                  <ion-input name="password" type="password" required placeholder="Nueva contraseña"
+                    formControlName="contraseña"></ion-input>
+                </ion-item>
+              </ion-list>
+
+              <div class="botones">
+                <ion-button class="cam" color="warning" (click)="cambiar()" expand="full">Cambiar contraseña</ion-button>
+                <ion-button expand="full" [routerLink]="['/']">Inicio</ion-button>
+              </div>
+
+
+            </form>
+
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+  </ion-slide>
+</ion-content>

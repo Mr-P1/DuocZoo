@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  ></ion-back-button>
+      
+    </ion-buttons>
+    <ion-title>Eliminar Animal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="cartita" *ngIf="animalAcitvo">
+    <img alt="Silhouette of mountains" [src]="animalAcitvo.imagen"  />
+    <ion-card-header>
+      <ion-card-title style="text-align: center;color: rgb(255, 157, 0);">{{animalAcitvo.nombre}}</ion-card-title>
+      <ion-card-subtitle style="text-align: center; color: rgb(0, 119, 255);">{{animalAcitvo.raza}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content style="text-align: center; color: rgb(255, 255, 255);">
+      Este increible {{animalAcitvo.raza}} pesa {{animalAcitvo.peso}} kg y mide unos {{animalAcitvo.altura}} metros, 
+      pertenece al grupo {{animalAcitvo.grupo}}, este animalAcitvo es {{animalAcitvo.alimentacion}} y esté se encuetra en el recinto de {{animalAcitvo.recinto}}
+    </ion-card-content>
+
+    
+    
+
+
+    <ion-row>
+      <ion-col style="text-align: center">
+        <ion-button  color="danger" color="danger" (click)="eliminarAnimal()" round outline  >
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+</ion-row>
+  </ion-card>
+</ion-content>

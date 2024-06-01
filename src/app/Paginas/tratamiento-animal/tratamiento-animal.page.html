@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  ></ion-back-button>
+      
+    </ion-buttons>
+    <ion-title>Tratamiento Animal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="cartita">
+
+    <form [formGroup]="formulario" (ngSubmit)="tratamiento()">
+
+  
+
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre" readonly></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Raza</ion-label>
+        <ion-input type="text" formControlName="raza" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" formControlName="edad" readonly></ion-input >
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Altura</ion-label>
+        <ion-input type="number" formControlName="altura" readonly></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Peso</ion-label>
+        <ion-input type="number" formControlName="peso" readonly></ion-input>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-label position="floating">Observacion</ion-label>
+        <ion-input type="text" formControlName="observacion" ></ion-input>
+      </ion-item>
+    
+  
+      
+
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <ion-button [disabled]="formulario.invalid" role="submit" type="submit">
+            Publicar animal
+          </ion-button>
+        </ion-col>
+    </ion-row>
+  
+    </form>
+
+  </ion-card>
+
+  
+
+</ion-content>

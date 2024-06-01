@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar Hora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div >
+    <ion-card-content>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label><ion-icon name="calendar-outline"></ion-icon> Fecha</ion-label>
+          <ion-note slot="end" id="datetimeValue"></ion-note>
+        </ion-item>
+        <ion-datetime slot="content" presentation="date"  [(ngModel)]="fechaSeleccionada" [isDateEnabled]="isWeekday" ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+</ion-card-content>
+  </div>
+  <div>
+    <ion-card class="carti" >
+      <ion-card-header>
+        <ion-row  style="border-bottom: groove;" style="text-align: center; background-color: rgb(0, 162, 255); color:rgb(255, 255, 255) ;"  >
+          <ion-col col-4  >
+            <ion-label >Ticket :</ion-label>
+          </ion-col>
+          <ion-col col-4>
+            <ion-label >Cantidad : </ion-label>
+          </ion-col>
+          <ion-col col-4>
+            <ion-label >Subtotal : </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row style="border-bottom: groove;" *ngFor="let x of compra?.detalles">
+          <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+            <ion-label>{{x?.nombre}}</ion-label>
+          </ion-col>
+          <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+            <ion-label>{{x?.cantidad}}</ion-label>
+          </ion-col>
+          <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+            <ion-label>$ {{x?.subtotal}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <h2 style="text-align: center;color:white">Total: $ {{compra?.total}}</h2>
+
+        <br>
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <ion-button fill="solid" shape="round" type="submit" (click)="test()" [disabled]="!botonHabilitado">
+            <ng-container *ngIf="botonHabilitado; else botonDeshabilitado">Modificar</ng-container>
+            <ng-template #botonDeshabilitado>Ya no se puede</ng-template>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      </ion-card-header>
+    </ion-card>    
+  </div>
+  
+</ion-content>

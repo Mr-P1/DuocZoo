@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/inicio-usuario']"  ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Horas Agendadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+
+<ion-content>
+  <ion-card class="cartita" *ngFor="let x of compra">
+    <ion-card-header>
+      <ion-card-title style="text-align: center;color: rgb(255, 255, 255);">Total: $ <style></style> {{x.total}}</ion-card-title>
+      <hr style="background-color: aliceblue;">
+      <ion-card-title style="text-align: center;color:white">Fecha: {{x.fecha}}</ion-card-title>
+    </ion-card-header>
+
+    
+    <ion-card-content>
+      
+
+
+      <ion-row  style="border-bottom: groove;" style="text-align: center; background-color: rgb(0, 162, 255); color:rgb(255, 255, 255) ;"  >
+        <ion-col col-4  >
+          <ion-label >Nombre :</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label >Cantidad : </ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label >Subtotal : </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove;" *ngFor="let detalle of x.detalles">
+        <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+          <ion-label>{{detalle.nombre}}</ion-label>
+        </ion-col>
+        <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+          <ion-label>{{detalle.cantidad}}</ion-label>
+        </ion-col>
+        <ion-col col-4 style="text-align: center; background-color: rgb(255, 255, 255);color:rgb(0, 0, 0)">
+          <ion-label>$ {{detalle.subtotal}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <ion-button [routerLink]="['/modificar-hora',x.id]" shape="round" expand="full" fill="solid" > Modificar</ion-button>
+            
+        </ion-col>
+      </ion-row>
+      
+    </ion-card-content>
+    
+    
+    
+
+  </ion-card>
+
+
+</ion-content>
+

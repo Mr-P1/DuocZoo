@@ -1,0 +1,57 @@
+ion-content{
+    --background: url(./../../../assets/img/uuuh.jpg) 0 0/100% 100% no-repeat;
+}
+ion-header ion-fab {
+  width: 90%;
+}
+.cabecera {
+    width: 278px;
+    height: 80px;
+    --ion-background-color:white
+}
+
+
+.botonredondo{
+    top:470px;
+    margin-left:230px;
+}
+
+
+.botonmenu {
+    margin-left: 205px;
+}
+
+.textoo {
+
+    color: rgb(255, 179, 0);
+}
+
+
+.botonmenu {
+    top: 50%;
+    margin-left: 140px;
+}
+
+
+
+.contaier-login {
+    width: 90%;
+    padding: 10px;
+    background: #ffffff4f;
+    border-radius: 10%;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+
+
+.cartita {
+    background-color: rgba(0, 0, 0, 0.778);
+    
+    border-radius: 30px;
+}
+
+.boton{
+   margin-top:  15px;
+}

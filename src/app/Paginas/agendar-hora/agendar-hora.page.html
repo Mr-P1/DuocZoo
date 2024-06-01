@@ -1,0 +1,78 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-menu-toggle >
+        
+      <ion-button color="light"  [routerLink]="['/inicio-usuario']"><ion-icon name="arrow-undo-outline"></ion-icon>Volver</ion-button>
+      
+    </ion-menu-toggle>
+  </ion-toolbar>  
+</ion-header> -->
+
+<ion-content>
+  
+
+  <ion-slide>
+    <div class="contaier-login">
+      
+        
+      
+        <ion-grid>
+            
+            <ion-row>
+                <ion-col>
+                  <ion-row>
+                    <ion-col>
+                        <h1 style="color: rgb(255, 255, 255);">𝒜𝑔𝑒𝓃𝒹𝒶𝓇 𝐻𝑜𝓇𝒶</h1>
+                    </ion-col>
+                </ion-row>
+                    <ion-list>
+                      <ion-item>
+                        <ion-icon name="calendar-number-outline"></ion-icon>
+                        <ion-input name="fecha" type="date" required placeholder="Ingresa Fecha"></ion-input>
+                    </ion-item>
+                      
+                        <ion-item>
+                            <ion-icon name="person" class="icon-login"></ion-icon>
+                            <ion-input name="user" type="text" required placeholder="Ingresa Nombre"></ion-input>
+                        </ion-item>
+                        
+                        <ion-item>
+                          <ion-icon name="card-outline"></ion-icon>
+
+
+                            <ion-input name="dni" type="text" required placeholder="Ingresa RUT/DNI"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                          <ion-icon name="call-outline"></ion-icon>
+                          <ion-input name="telefono" type="text" required placeholder="Ingresa Teléfono"></ion-input>
+                      </ion-item>
+
+                      <ion-item> 
+                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-select interface="popover" placeholder="Metodo de pago">
+                          <ion-select-option value="apples">WebPay</ion-select-option>
+                          
+                        </ion-select>
+                      </ion-item>
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button type="submit" fill="solid" expand="full" [routerLink]="['/inicio-usuario']">
+                        Pagar
+                    </ion-button>
+
+                    <ion-button fill="solid" expand="full" [routerLink]="['/inicio-usuario']"> Volver</ion-button>
+                    
+                    
+                </ion-col>
+            </ion-row>
+           
+        </ion-grid>
+    </div>
+</ion-slide>
+
+</ion-content>

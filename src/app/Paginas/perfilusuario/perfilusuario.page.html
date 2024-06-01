@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1 style="color: rgb(255, 255, 255);">Perfil</h1>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row *ngIf="usuario">
+                    <ion-col>
+                        <p style="color: rgb(255, 255, 255);">Usuario: {{usuarioIngresado}} </p>
+
+                        <p style="color: rgb(255, 255, 255);">Correo: {{usuario.correo}} </p>
+                        
+                        <p style="color: rgb(255, 255, 255);">Rut: {{usuario.rut}} </p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <ion-button color="danger" type="submit" fill="solid" expand="full"
+                            [routerLink]="['/inicio-usuario']">
+                            Volver
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </ion-slide>
+
+</ion-content>
